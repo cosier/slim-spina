@@ -1,15 +1,15 @@
 module.exports = {
   theme: {
     fontFamily: {
-      body: ['Metropolis'],
-      mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace']
+        body: ['Roboto', 'sans-serif'],
+        mono: ['Roboto', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace']
     },
     extend: {
       colors: {
         spina: {
-          light: '#797ab8',
-          DEFAULT: '#6865b4',
-          dark: '#3a3a70'
+            light: '#f7b57a',
+            DEFAULT: '#e58025',
+            dark: '#b95e0b'
         }
       }
     }

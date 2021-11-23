@@ -2,7 +2,7 @@ module Spina
   module Admin
     class AccountsController < AdminController
       admin_section :settings
-      
+
       before_action :set_breadcrumbs
 
       def edit
@@ -22,7 +22,7 @@ module Spina
         def account_params
           params.require(:account).permit!
         end
-        
+
         def set_breadcrumbs
           add_breadcrumb I18n.t('spina.preferences.account'), spina.edit_admin_account_path
         end

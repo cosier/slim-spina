@@ -1,14 +1,14 @@
 module Spina
   class Theme
 
-    attr_accessor :name, :title, :parts, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources, :embeds
+    attr_accessor :name, :title, :parts, :page_parts, :structures, :view_templates, :layout_parts, :custom_pages, :plugins, :public_theme, :config, :navigations, :resources, :embes
 
     class << self
 
       def all
         ::Spina::THEMES
       end
-      
+
       def unregister(name)
         theme = find_by_name(name)
         all.delete(theme) if theme
@@ -42,7 +42,7 @@ module Spina
       @embeds           = []
       @public_theme = false
     end
-    
+
     def embeddables
       embeds.map{|embed| Embeds.constantize(embed)}
     end
@@ -52,7 +52,7 @@ module Spina
       @view_templates.map do |view_template|
         next if is_custom_undeletable_page?(view_template[:name])
         next if view_template[:exclude_from]&.include?(page_collection)
-        
+
         OpenStruct.new({
           name: view_template[:name],
           title: view_template[:title],
