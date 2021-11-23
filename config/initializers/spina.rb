@@ -1,4 +1,5 @@
 Spina.configure do |config|
+  
   # Locales
   # ===============
   # All locales your content should be available in.

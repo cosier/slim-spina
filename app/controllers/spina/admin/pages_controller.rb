@@ -5,6 +5,10 @@ module Spina
       before_action :set_page, only: [:edit, :edit_content, :edit_template, :update, :destroy, :children]
       before_action :set_tabs
 
+      def front
+        redirect_to portal_dashboard_path
+      end
+
       def index
         add_breadcrumb I18n.t('spina.website.pages'), spina.admin_pages_path
         

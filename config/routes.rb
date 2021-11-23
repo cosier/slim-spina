@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 end
 
 Spina::Engine.routes.draw do
+  if Spina.custom_routes.present?
+    Spina.custom_routes.call(self)
+  end
 
   # API
   namespace :api, path: Spina.config.api_path do
@@ -24,9 +27,10 @@ Spina::Engine.routes.draw do
 
   # Backend
   namespace :admin, path: Spina.config.backend_path do
-    root to: "pages#index"
+    root to: "pages#front"
 
     resource :account
+    resource :dashboard
     resource :theme, controller: :theme
 
     get "/settings/:plugin", to: "settings#edit", as: :edit_settings

@@ -15,8 +15,11 @@ require 'browser'
 
 module Spina
   class Engine < ::Rails::Engine
+
+    attr_accessor :custom_routes
+
     isolate_namespace Spina
-    
+
     config.autoload_paths += %W( #{config.root}/lib )
 
     config.to_prepare do
@@ -27,7 +30,7 @@ module Spina
         end
       end
     end
-    
+
     config.to_prepare do
       Spina::Part.register(
         Spina::Parts::Line,
