@@ -1,4 +1,4 @@
-<li <%= "data-navigation-active" if @active %>>
+<li <%= "data-navigation-active" if @active %> class='lg:inline-block'>
     <%= link_to @path, class: "block p-3 leading-none text-white hover:opacity-100 transition-opacity font-semibold #{css_classes}" do %>
         <% if @icon.present? %>
            <%= @icon.html_safe %> 

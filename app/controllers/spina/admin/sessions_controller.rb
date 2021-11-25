@@ -2,7 +2,8 @@ module Spina
   module Admin
     class SessionsController < AdminController
       skip_before_action :authenticate
-
+      layout 'spina/admin/simple'
+      
       def new
       end
 

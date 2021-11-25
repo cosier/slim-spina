@@ -23,7 +23,7 @@ module Spina
 
       def ul_classes
         if active?
-          "md:translate-x-20 "
+          "md:translate-x-0 "
         else
           "translate-x-full"
         end

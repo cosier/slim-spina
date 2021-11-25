@@ -1,7 +1,8 @@
 module Spina
   module Admin
     class PasswordResetsController < AdminController
-      layout "spina/admin/sessions"
+      # layout "spina/admin/sessions"
+      layout 'spina/admin/simple'
 
       skip_before_action :authenticate
 
