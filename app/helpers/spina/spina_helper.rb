@@ -21,6 +21,5 @@ module Spina::SpinaHelper
   def sidebar_list_style
     sidebar_on? ? '' : 'list-none'
   end
-  end
 
 end
