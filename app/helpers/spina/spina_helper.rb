@@ -10,4 +10,12 @@ module Spina::SpinaHelper
     ], "\n"
   end
 
+  def sidebar_on?
+    ENV['ADMIN_SIDEBAR'] == 'true'
+  end
+
+  def sidebar_h_full
+    sidebar_on? ? 'md:h-full' : ''
+  end
+
 end
