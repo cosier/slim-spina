@@ -3,7 +3,7 @@ module Spina
     class SessionsController < AdminController
       skip_before_action :authenticate
       layout 'spina/admin/simple'
-      
+
       def new
       end
 
@@ -12,7 +12,7 @@ module Spina
         if user && user.authenticate(params[:password])
           session[:spina_user_id] = user.id
           user.touch(:last_logged_in)
-          redirect_to spina.admin_root_url
+          redirect_to portal_dashboard_path
         else
           flash.now[:alert] = I18n.t('spina.notifications.wrong_username_or_password')
           render "new", status: :unprocessable_entity
