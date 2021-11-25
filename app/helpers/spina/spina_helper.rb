@@ -18,4 +18,9 @@ module Spina::SpinaHelper
     sidebar_on? ? 'md:h-full' : ''
   end
 
+  def sidebar_list_style
+    sidebar_on? ? '' : 'list-none'
+  end
+  end
+
 end
